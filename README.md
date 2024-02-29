@@ -134,3 +134,14 @@ Finally:
     ```
     docker run -p 8000:8000 captainfedora/concert:v1
     ```
+
+# SOURCES
+
+**Github : [ibm-developer-skills-network/sfvih-Back-end-Development-Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone)**
+## Coursera links :
+
+**Course : [Back-end Application Development Capstone Project](https://www.coursera.org/learn/backend-development-capstone-project/home/week/1)**
+
+**Module : [Week 1 : Project Tasks Overview](https://www.coursera.org/learn/backend-development-capstone-project/supplement/1PoJi/project-tasks-overview)**
+
+**Specialization : [IBM Back-End Development Professional Certificate](https://www.coursera.org/professional-certificates/ibm-backend-development)**
