@@ -1,147 +1,163 @@
-# Lab
+![Python 3.9](https://img.shields.io/badge/Python-3.9-blue.svg)
+![Built with Django](https://img.shields.io/badge/Built%20with-Django-brightgreen.svg)
+![Authentication - Django](https://img.shields.io/badge/Authentication-Django-blue.svg)
+![Session Management - Django](https://img.shields.io/badge/Session%20Management-Django-orange.svg)
+![Cloud Platforms - IBM Cloud](https://img.shields.io/badge/Cloud%20Platforms-IBM%20Cloud-blue.svg)
+![Cloud Platforms - Redhat OpenShift](https://img.shields.io/badge/Cloud%20Platforms-Redhat%20OpenShift-red.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-1.  Clone git repo: `git clone https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone.git`
-2.  Get into the directory by `cd sfvih-Back-end-Development-Capstone`
-3.  Get into Django code `cd djangoserver`
-4.  Install requirements `pip install -r requirements.txt`
-5.  Run the server `python manage.py runserver`
-6.  It will tell you that you have unapplied migrations.
+# Music Band Website
+This project aims to develop a Django-based web application for a popular music band. The website allows users to view pictures from past events, see popular lyrics, list upcoming events, create an account, sign in, and register for events. The application was built using Flask for microservices and Django for the main application, following the steps from a predefined template.
 
-    **Migrations** are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations, when to run them, and the common problems you might run into. There are several commands which you will use to interact with migrations and Django’s handling of database schema:
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Architecture](#architecture)
+3. [Technologies Used](#technologies-used)
+4. [Installation and Configuration](#installation-and-configuration)
+5. [Usage](#usage)
+6. [Development](#development)
+   - Project Structure
+   - Templates
+   - Views
+   - Models
+   - Proxy Services
+7. [Deployment](#deployment)
+8. [Sources](#sources)
+9. [License](#license)
+10. [Contact](#contact)
 
-    1. **_migrate_**, which is responsible for applying and unapplying migrations.
-    2. **_makemigrations_**, which is responsible for creating new migrations based on the changes you have made to your models.
-    3. **_sqlmigrate_**, which displays the SQL statements for a migration.
-    4. **_showmigrations_**, which lists a project’s migrations and their status.
+## 1. Introduction <a name="introduction"></a>
 
-7.  Create the initial migrations and generate the database schema:
+### Project Objective
+The primary objective of this project is to develop a comprehensive website for a music band using the Django framework. The system facilitates viewing pictures, song lyrics, upcoming events, user interactions, and registrations through a user-friendly web interface.
 
-    ```shell
+### Key Features
+- **`Pictures Gallery`** : View pictures from past concerts.
+- **`Song Lyrics`** : View popular lyrics of songs.
+- **`Upcoming Events`** : See a list of upcoming events.
+- **`User Registration`** : Create an account.
+- **`Event Registration`** : Sign in and register for an event.
+- **`Past Registrations`** : View past event registrations.
+
+## 2. Architecture <a name="architecture"></a>
+- **Flask Microservices** : Already developed for the [Get Pictures](https://github.com/fkanedev/fkctp-flask-Pictures-ms) and [Get Songs services](https://github.com/fkanedev/fkctp-flask-Song-ms).
+- **MongoDB** : Used for storing song lyrics.
+- **Django Application** : Manages the main application functionalities and user interactions.
+- **SQLite** : Used for local development and testing of the Django application.
+- **IBM Cloud and Redhat OpenShift** : Platforms for deploying microservices and the main application.
+
+## 3. Technologies Used <a name="technologies-used"></a>
+
+### Programming Languages
+- **Python**: The core language used for backend development with Django and Flask.
+
+### Tools and Frameworks
+- **Django**: A high-level Python web framework.
+- **Flask**: A micro web framework for Python.
+- **Bootstrap** : Utilized for responsive front-end design.
+- **SQLite**: A lightweight, disk-based database for local development.
+- **MongoDB**: A NoSQL database for storing song lyrics.
+
+### Cloud Platforms
+- **IBM Cloud**: Used for deploying the Get Pictures microservice on IBM Code Engine.
+- **Redhat OpenShift**: Used for deploying the Get Songs microservice and MongoDB.
+- **IBM Kubernetes Service**: Used for deploying the main application.
+
+## 4. Installation and Configuration <a name="installation-and-configuration"></a>
+
+### Prerequisites
+- Ensure that you have Python 3.x and Pip installed.
+- Sign up for IBM Cloud and Redhat OpenShift accounts.
+
+### Installation Steps
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/fkanedev/fkctp-django-Music-Band-Site-ma-ui
+    cd fkctp-django-Music-Band-Site-ma-ui
+    ```
+2. **Set up the Django server**:
+    ```sh
+    cd django_concert
+    pip install -r requirements.txt
     python manage.py makemigrations
     python manage.py migrate
+    python manage.py runserver
+    ```
+3. **Create an admin user**:
+    ```sh
+    python manage.py createsuperuser
     ```
 
-8.  Run server successfully this time: `python manage.py runserver`
-9.  Launch Application
-10. Click on Songs and Photos
-11. Click on Concerts, no existing Concert present
-12. Let's create admin user `python manage.py createsuperuser`
-    1. Username: `admin`
-    2. Email address: _leave blank, simply press enter_
-    3. Password: Your choice, or simply `qwerty123`
-13. Run the server again `python manage.py runserver` and goto admin: `http://localhost:8000/admin/`
-14. Enter the admin user details you created in previous step.
-15. Now you are in the admin section built by Django.
+## 5. Usage <a name="usage"></a>
+### Anonymous Use Cases
+- User visits the Django Website home page.
+- The song page shows songs and lyrics.
+- The pictures page shows pictures from past concerts.
 
-    One of the most powerful parts of Django is the **automatic admin interface**. It reads metadata from your models to provide a quick, model-centric interface where trusted users can manage content on your site. The admin’s recommended use is limited to an organization’s internal management tool. It’s not intended for building your entire front end around.
+### Admin Use Cases
+- Let the admin user change the concert date.
 
-16. Add a Concert:
-    1. Concert name: `Coachella 2023`
-    2. Duration: `72`
-    3. City: `Indio, California`
-    4. Date: `2023-04-14`
-17. Click on `View Site` meny at the top
-18. Now if you visit `Concerts`, you will see Coachella listed.
-19. Our Django application is now running, but Songs and Photos are hard coded.
-20. Open `concert\views.py`
-21. See `songs` and `photos` definition.
+### Signed-in Use Cases
+- The user signs into the application.
+- The user is able to see their concerts.
+- The user is able to book a concert.
+- The user is able to delete their reservation.
 
-    1. Retrieve `songs` from a REST endpoint by replacing the code with following:
+## 6. Development <a name="development"></a>
+### Project Structure 
+- **django_concert/** : The main Django project directory containing settings and configurations.
+- **concert/** : Contains the core application responsible for concert-related functionalities.
+- **static/** : Holds static files such as CSS and JavaScript.
+- **templates/** : Contains HTML templates for rendering web pages.
 
-    ```python
-    songs = req.get(
-        "https://raw.githubusercontent.com/captainfedoraskillup/private-get-songs/main/backend/data/songs.json").json()
-    return render(request, "songs.html", {"songs": songs})
-    ```
+### Templates
+- **index.html** : Home page with Djirection Music band presentation.
+- **concerts.html** : Presents the concerts list in a Bootstrap table, with attributes (ID, Date, Concert name,...) for each concert.
+- **concert_detail.html** : Page showing details of a user’s concert.
+- **songs.html** : Page showing a list of songs and lyrics.
+- **photos.html** : Page showing a gallery of past concert pictures.
+- **login.html** : User login page.
+- **signup.html** : User registration page.
 
-    2. Retrieve `photos` from a REST endpoint by replacing the code with following:
+### Views
+- **index** : Renders the home page.
+- **songs** : Retrieve songs from a REST endpoint of [Songs microservice](https://github.com/fkanedev/fkctp-flask-Song-ms) deployed on Redhat OpenShift and renders the song lyrics page.
+- **photos** : Retrieve pictures from a REST endpoint of [Pictures microservice](https://github.com/fkanedev/fkctp-flask-Pictures-ms) deployed on IBM Code Engine and renders the pictures gallery.
+- **login** : Handles user login.
+- **signup** : Handles user registration.
+- **concerts** : Renders the user’s concerts.
+- **concert_attendee** : Allows users to book a concert.
+- **concert_detail** : Renders details of a user’s concert.
 
-    ```python
-    photos = req.get(
-        "https://raw.githubusercontent.com/captainfedoraskillup/private-get-pictures/main/backend/data/pictures.json").json()
-    return render(request, "photos.html", {"photos": photos})
-    ```
+### Models
+- **Concert** : Represents a concert event with attributes for name, duration, city, and date.
+- **User** : Built-in Django user model for authentication.
+- **ConcertAttending:** Manages the relationship between users and concerts, indicating whether a user is attending. It includes choices for attendance status and ensures a unique combination of concert and user.
+- **Photo:** Represents a photo from a past concert, including URL and event details. This model is not managed by Django's ORM.
+- **Song:** Represents a song with its title and lyrics. This model is also not managed by Django's ORM.
 
-22. Verify Songs and Photos changes. Visit the Songs section, you will see a longer list of songs, clicking on each will show its Lyrics in a modal dialog. While going into Photos, you will see more than two.
-23. Now back to Concerts, click on the concert Coachella we created. You will see an RSVP page.
-24. RSVP Page shows you details of the Concert along with an option to either: Attend, Not Attend or no Option `-`.
-25. If you open `concert_detail.html`, you will see an html form:
+## 7. Deployment <a name="deployment"></a>
+### Deploying Microservices
+- **Get Pictures Microservice**:
+  - Deployed to IBM Code Engine.
+- **Get Songs Microservice and MongoDB**:
+  - Deployed to Redhat OpenShift.
 
-        ```html
-                <form action="{% url 'concert_attendee' %}" method="POST">
-                {% csrf_token %}
-                <input
-                  name="concert_id"
-                  type="number"
-                  value="{{concert_details.id}}"
-                  hidden="hidden"
-                />
-                <div class="input-group mb-3">
-                  <label class="input-group-text" for="attendee_choice">RSVP</label>
-                  <select class="form-select" name="attendee_choice" required>
-                    {% for attending_choice in attending_choices %}
-                      <option {% if attending_choice.0 == status %}selected {% endif %} value="{{ attending_choice.0 }}">{{ attending_choice.1 }}</option>
-                    {% endfor %}
-                  </select>
-                </div>
-                <input type="submit" class="btn btn-primary" />
-              </form>
-        ```
+### Deploying Main Application
+- **Main Application**:
+  - Deployed to IBM Kubernetes Service.
 
-26. On `Submit` of this form, the details are sent to `concert_attendee` in `concert\views.py`.
-27. It does two validations:
-    `if request.user.is_authenticated:` means whether the user is authenticated. Because anonymous users are not allowed to RSVP.
-    Then `if request.method == "POST":` to check whether it is an `HTTP POST` event.
-28. From the `body` of the `POST` method, it takes `concert_id` and `attendee_choice`.
-29. Then it checks, whether a selection was made previously, if yes, then update it. Otherwise insert new selection the databaes for this user.
-30. Finally, redirect the user.
+## 8. Sources <a name="sources"></a>
+- **Template**: [IBM Developer Skills Network - Back-end Development Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone)
 
-## Cleanup while testing
+## 9. License <a name="license"></a>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```shell
-find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
-find . -path "*/migrations/*.pyc"  -delete
-find . -path "*/db.sqlite3"  -delete
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
+## 10. Contact <a name="contact"></a>
+### Contact Information
+- Email: **your-email@example.com**
+- LinkedIn: [Your Profile](https://www.linkedin.com/in/your-profile/)
+- Portfolio: [Your Portfolio](https://your-portfolio.com)
 
-##  To move the data from SQLite to MySQL
-
-Execute:
-
-`python manage.py dumpdata > datadump.json`
-
-Next, change your `settings.py` to the mysql database.
-
-Finally:
-
-`python manage.py loaddata datadump.json`
-
-##  Containerize the application
-1. build a docker image
-    ```
-    docker build . -t concert
-    ```
-1. tag docker image with the correct registry information
-    ```
-    docker tag concert captainfedora/concert:v1
-    ```
-    The above command tags to `captainfedora` repository on dockerhub with the image name of `concert` and label of `v1`
-
-1. Run the docker image to validate everything is working
-    ```
-    docker run -p 8000:8000 captainfedora/concert:v1
-    ```
-
-# SOURCES
-
-**Github : [ibm-developer-skills-network/sfvih-Back-end-Development-Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone)**
-## Coursera links :
-
-**Course : [Back-end Application Development Capstone Project](https://www.coursera.org/learn/backend-development-capstone-project/home/week/1)**
-
-**Module : [Week 1 : Project Tasks Overview](https://www.coursera.org/learn/backend-development-capstone-project/supplement/1PoJi/project-tasks-overview)**
-
-**Specialization : [IBM Back-End Development Professional Certificate](https://www.coursera.org/professional-certificates/ibm-backend-development)**
+### Contribution and Support
+Contributions are welcome. Please refer to the [CONTRIBUTING](CONTRIBUTING.md) file for more information on how to contribute.
