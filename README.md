@@ -7,7 +7,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 # Music Band Website
-This project aims to develop a Django-based web application for a popular music band. The website allows users to view pictures from past events, see popular lyrics, list upcoming events, create an account, sign in, and register for events. The application was built using Flask for microservices and Django for the main application, following the steps from a predefined template.
+This project aims to develop a Django-based web application for a popular music band. The website allows users to view pictures from past events, see popular lyrics, list upcoming events, create an account, sign in, and register for events. It demonstrates the practical application of Django in a real-world scenario. It's part of my training in the [IBM Developer Skills Network - Back-end Development Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone) utilizing a [template](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone) provided by IBM Developer Skills Network.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -29,7 +29,8 @@ This project aims to develop a Django-based web application for a popular music 
 ## 1. Introduction <a name="introduction"></a>
 
 ### Project Objective
-The primary objective of this project is to develop a comprehensive website for a music band using the Django framework. The system facilitates viewing pictures, song lyrics, upcoming events, user interactions, and registrations through a user-friendly web interface.
+The primary objective of this project is to develop a comprehensive website for a music band using the Django framework. The system facilitates viewing pictures, song lyrics, upcoming events, user interactions, and registrations through a user-friendly web interface. The project integrates [Pictures](https://github.com/fkanedev/fkctp-flask-Pictures-ms) and [Songs](https://github.com/fkanedev/fkctp-flask-Song-ms) microservices built with Flask and MongoDB to manage picture data and song lyrics, demonstrating the practical implementation and utilization of these technologies in a real-world scenario.
+
 
 ### Key Features
 - **`Pictures Gallery`** : View pictures from past concerts.
@@ -137,15 +138,29 @@ The primary objective of this project is to develop a comprehensive website for 
 - **Song:** Represents a song with its title and lyrics. This model is also not managed by Django's ORM.
 
 ## 7. Deployment <a name="deployment"></a>
-### Deploying Microservices
+The deployment process involves several key steps to ensure the successful deployment of microservices for this project:
+
 - **Get Pictures Microservice**:
   - Deployed to IBM Code Engine.
+    - Start Code Engine.
+    - Clone GitHub Repository.
+    - Build Docker Image.
+    - Push Image to Registry.
+    - Deploy Application.
+
 - **Get Songs Microservice and MongoDB**:
   - Deployed to Redhat OpenShift.
+    - Install MongoDB on OpenShift.
+    - Clone GitHub Repository.
+    - Build and Deploy Application.
 
 ### Deploying Main Application
+
 - **Main Application**:
   - Deployed to IBM Kubernetes Service.
+    - Setup Kubernetes environment.
+    - Configure Docker images.
+    - Deploy application containers.
 
 ## 8. Sources <a name="sources"></a>
 - **Template**: [IBM Developer Skills Network - Back-end Development Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone)
