@@ -9,6 +9,9 @@
 # Music Band Website
 This project aims to develop a Django-based web application for a popular music band. The website allows users to view pictures from past events, see popular lyrics, list upcoming events, create an account, sign in, and register for events. It demonstrates the practical application of Django in a real-world scenario. It's part of my training in the [IBM Developer Skills Network - Back-end Development Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone) utilizing a [template](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone) provided by IBM Developer Skills Network.
 
+# Topics
+`Django`, `Python`, `Web Application`, `Music Band`, `User Authentication`, `Event Management`, `Picture Gallery`, `Song Lyrics`, `Flask`, `MongoDB`, `IBM Cloud`, `Redhat OpenShift`, `SQLite`, `REST API`, `Kubernetes`, `Capstone Project`, `Back-end Development`, `Cloud Deployment`, `Microservices`, `Bootstrap`, `IBM Developer Skills Network`
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Architecture](#architecture)
