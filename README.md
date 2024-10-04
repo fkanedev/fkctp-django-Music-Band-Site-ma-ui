@@ -173,6 +173,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 10. Contact <a name="contact"></a>
 ### Contact Information
+
+- Send me email :
 **fkanecloudtech@gmail.com**
 - Connect with me on [LinkedIn](https://www.linkedin.com/in/fkanecloudtech/)
 - Visit my [portfolio](https://fkanedev.github.io) to explore my projects and services.
