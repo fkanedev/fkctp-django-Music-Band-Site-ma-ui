@@ -168,6 +168,10 @@ The deployment process involves several key steps to ensure the successful deplo
 ## 8. Sources <a name="sources"></a>
 - **Template**: [IBM Developer Skills Network - Back-end Development Capstone](https://github.com/ibm-developer-skills-network/sfvih-Back-end-Development-Capstone)
 
+- **Useful links**:
+  - **[Back-end Application Development Capstone Project](https://www.coursera.org/learn/backend-development-capstone-project/home/module/3)**
+  - **[IBM Back-End Development Professional Certificate](https://www.coursera.org/professional-certificates/ibm-backend-development)**
+
 ## 9. License <a name="license"></a>
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
