@@ -173,9 +173,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 10. Contact <a name="contact"></a>
 ### Contact Information
-- Email: **your-email@example.com**
-- LinkedIn: [Your Profile](https://www.linkedin.com/in/your-profile/)
-- Portfolio: [Your Portfolio](https://your-portfolio.com)
+**fkanecloudtech@gmail.com**
+- Connect with me on [LinkedIn](https://www.linkedin.com/in/fkanecloudtech/)
+- Visit my [portfolio](https://fkanedev.github.io) to explore my projects and services.
 
 ### Contribution and Support
 Contributions are welcome. Please refer to the [CONTRIBUTING](CONTRIBUTING.md) file for more information on how to contribute.
